@@ -1,0 +1,11 @@
+# Ignore WAV files in the music folder (including subfolders)
+music/*.wav
+music/**/*.wav
+
+# Virtual environment
+.venv/
+
+# Python cache and compiled files
+__pycache__/
+**/__pycache__/
+*.pyc
