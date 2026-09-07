@@ -1,0 +1,53 @@
+{
+    "parameters": {
+      "ecc_x": {
+        "default": 0.6,
+        "weights": [0.0, 0.0, 0.5, 0.0, 0.0, 0.0] 
+      },
+      "ecc_y": {
+        "default": 0.6,
+        "weights": [0.0, 0.0, 0.5, 0.0, 0.0, 0.0] 
+      },
+      "thickness": {
+        "default": 0.5,
+        "weights": [-0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "zoom_in": {
+        "default": 0.3,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.05, 0.0] 
+      },
+      "radial_pos": {
+        "default": 0.0,
+        "weights": [0.0, 0.0, 0.5, 0.0, 0.0, 0.0] 
+      },
+      "zoom_in_balls": {
+        "default": 0.3,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.05, 0.0] 
+      },
+      "num_balls": {
+        "default": 0.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 6.0] 
+      },
+      "ray_amp": {
+        "default": -1.7,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 2.5] 
+      },
+      "ray_freq": {
+        "default": 0.0,
+        "weights": [0.0, -17.0, 0.0, 0.0, 0.0, -8.0] 
+      },
+      "wiggle_speed": {
+        "default": 7.0,
+        "weights": [0.0, 0.0, 0.025, 0.0, 0.0, 0.00] 
+      },
+      "rotation": {
+        "default": 0.25,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "freq": {
+        "default": 11.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      }
+    }
+  }
+  

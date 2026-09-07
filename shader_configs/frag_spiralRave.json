@@ -1,0 +1,37 @@
+{
+    "parameters": {
+      "ecc_x": {
+        "default": 1.1,
+        "weights": [0.0, 0.0, 0.3, 0.0, 0.0, 0.0] 
+      },
+      "ecc_y": {
+        "default": 1.2,
+        "weights": [0.0, 0.0, 0.3, 0.0, 0.0, 0.0] 
+      },
+      "zoom_in": {
+        "default": 0.05,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.65] 
+      },
+      "thickness": {
+        "default": 0.5,
+        "weights": [-0.2, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "radial_pos": {
+        "default": 0.15,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.8, 0.0] 
+      },
+      "radial_pos_delta": {
+        "default": 0.03,
+        "weights": [0.0, 0.05, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "zoom_in_balls": {
+        "default": 0.08,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.05, 0.0] 
+      },
+      "num_balls": {
+        "default": 0.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 6.0] 
+      }
+    }
+  }
+  

@@ -1,0 +1,40 @@
+{
+    "parameters": {
+        "ACID_FREQ": {
+            "base_value": 5.0,
+            "weights": [
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        },
+        "BALLS": {
+            "base_value": 10.0,
+            "weights": [
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        },
+        "ITERS": {
+            "base_value": 10.0,
+            "weights": [
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        }
+    }
+}

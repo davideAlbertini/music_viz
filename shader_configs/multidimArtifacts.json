@@ -1,0 +1,88 @@
+{
+    "parameters": {
+        "BUMP_AMP": {
+            "base_value": -4.0,
+            "weights": [
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        },
+        "MORPH_SPEED": {
+            "base_value": 0.0,
+            "weights": [
+                0.0,
+                -0.0,
+                0.0,
+                0.0,
+                210.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1000
+        },
+        "HUE_MIX": {
+            "base_value": 0.5,
+            "weights": [
+                0.0,
+                -0.4,
+                0.81,
+                0.46,
+                -0.0,
+                -0.67
+            ],
+            "sensitivity_multiplier": 1
+        },
+        "NUM_DAODDS": {
+            "base_value": 18.0,
+            "weights": [
+                9.399999999999999,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        },
+        "MIN_RAD": {
+            "base_value": 0.01,
+            "weights": [
+                -9.9,
+                0.0,
+                0.0,
+                0.0,
+                5.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 10
+        },
+        "MAX_RAD": {
+            "base_value": 5.0,
+            "weights": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                6.8999999999999995,
+                0.0
+            ],
+            "sensitivity_multiplier": 10
+        },
+        "END_X": {
+            "base_value": 27.0,
+            "weights": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "sensitivity_multiplier": 1
+        }
+    }
+}

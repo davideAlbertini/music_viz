@@ -1,0 +1,29 @@
+{
+    "parameters": {
+      "circ_speed": {
+        "base_value": 7.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "v_ripp_freq": {
+        "base_value": 15.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "white_space": {
+        "base_value": 0.1,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "h_band_freq":{
+        "base_value": 6.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "v_wiggle":{
+        "base_value": 50.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "v_freq":{
+        "base_value": 3.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+      }
+    }
+  }
+  

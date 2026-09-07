@@ -1,0 +1,17 @@
+{
+  "parameters": {
+    "maxIter": {
+      "default": 1.0,
+      "weights": [0.0, 0.0, 2.5, 0.0, 0.0, 0.0] 
+    },
+    "fracPattern": {
+      "default": 4.9,
+      "weights": [0.0, 0.0, 0.0, 0.0, 0.0, -5.56] 
+    },
+    "neonBrightness": {
+      "default": 0.01,
+      "weights": [0.0, 0.0, 0.0, 0.03, 0.0, 0.0] 
+    }
+  }
+}
+

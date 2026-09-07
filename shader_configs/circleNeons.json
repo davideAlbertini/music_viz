@@ -1,0 +1,17 @@
+{
+    "parameters": {
+      "fracPattern": {
+        "base_value": 0.8,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "neonBrightness": {
+        "base_value": 0.01,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      },
+      "p1": {
+        "base_value": 0.0,
+        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+      }
+    }
+  }
+  
