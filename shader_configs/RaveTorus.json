@@ -1,29 +1,76 @@
 {
-    "parameters": {
-      "circ_speed": {
-        "base_value": 7.0,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-      },
-      "v_ripp_freq": {
-        "base_value": 15.0,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-      },
-      "white_space": {
-        "base_value": 0.1,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-      },
-      "h_band_freq":{
-        "base_value": 6.0,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-      },
-      "v_wiggle":{
-        "base_value": 50.0,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
-      },
-      "v_freq":{
-        "base_value": 3.0,
-        "weights": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-      }
+    "version": 2,
+    "program": {
+        "vertex": "programs/vertex_shader.glsl",
+        "fragment": "finished_programs/RaveTorus.glsl"
+    },
+    "textures": {},
+    "features": [
+        {
+            "id": "mfcc",
+            "extractor": "mfcc",
+            "params": {
+                "n_mfcc": 8,
+                "skip": 2
+            },
+            "normalize": {
+                "method": "running_minmax",
+                "window_s": 5.0
+            }
+        }
+    ],
+    "uniforms": {
+        "circ_speed": {
+            "base": 7.0,
+            "weights": {
+                "mfcc[1]": 0.15
+            },
+            "smoothing": 0.99,
+            "clamp": null,
+            "sensitivity": 0.30000000000000016
+        },
+        "v_ripp_freq": {
+            "base": 5.900000000000015,
+            "weights": {
+                "mfcc[0]": -0.24,
+                "mfcc[3]": 0.86,
+                "mfcc[1]": -0.12,
+                "mfcc[4]": 0.12
+            },
+            "smoothing": 0.99,
+            "clamp": null,
+            "sensitivity": 8.399999999999988
+        },
+        "white_space": {
+            "base": 0.5,
+            "weights": {
+                "mfcc[4]": -0.74,
+                "mfcc[5]": -0.6
+            },
+            "smoothing": 0.99,
+            "clamp": null,
+            "sensitivity": 1.1
+        },
+        "h_band_freq": {
+            "base": 6.0,
+            "weights": {},
+            "smoothing": 0.0,
+            "clamp": null,
+            "sensitivity": 1.0
+        },
+        "v_wiggle": {
+            "base": 50.0,
+            "weights": {},
+            "smoothing": 0.0,
+            "clamp": null,
+            "sensitivity": 1.0
+        },
+        "v_freq": {
+            "base": 3.0,
+            "weights": {},
+            "smoothing": 0.0,
+            "clamp": null,
+            "sensitivity": 1.0
+        }
     }
-  }
-  
+}

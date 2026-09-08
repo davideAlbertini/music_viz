@@ -5,6 +5,9 @@ music/**/*.wav
 # Virtual environment
 .venv/
 
+# Pre-computed offline feature tables
+.feature_cache/
+
 # Python cache and compiled files
 __pycache__/
 **/__pycache__/

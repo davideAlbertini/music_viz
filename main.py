@@ -1,57 +1,46 @@
 import sys
 import threading
-import numpy as np
-from queue import Queue
-from PyQt5.QtWidgets import QApplication
+from pathlib import Path
+
 import moderngl_window as mglw
+from PyQt5.QtWidgets import QApplication
 
-import io, sys
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
-from audio_controller import AudioController
-from shader_controller import ShaderController
-from control_GUI import ShaderParameterPage 
+from gui.main_window import ShaderParameterPage
+from render.window_app import ShaderWindow
+from session import VizSession
 from shader_config import ShaderConfig
 
+TRACK = "./music/Skee Mask - ISS011 - Stressmanagement - 02 Panic Button.wav"
+PRESET = "speakerSun"
+TEXTURES = {}
 
-if __name__ == '__main__':
-    # Shared data structures
-    audio_features = np.zeros(6,)  # Fixed to 6 MFCC coefficients
-    audio_features_queue = Queue()
+#: "online" analyses audio as it plays; "offline" pre-analyses the track and
+#: looks features up by transport position, so they stay aligned under seeking.
+MODE = "online"
+ANALYSIS_RATE_HZ = 60.0
 
-    shader_config = ShaderConfig(
-        name='raveScreen',
-        textures={
-            'noiseTex': '../textures/noise.png',
-            'indexTex': '../textures/n1d.png',
-            'fontTex': '../textures/ascii.png',
-        }
-    )
 
-    # Assign shared resources to ShaderController class attributes
-    ShaderController.shader_config = shader_config
-    ShaderController.audio_features = audio_features
-    ShaderController.audio_features_queue = audio_features_queue
+def main() -> int:
+    if not Path(TRACK).is_file():
+        print(f"Track not found: {TRACK}\nPut a 16-bit WAV there or edit TRACK in main.py.")
+        return 1
 
-    # Initialize AudioController
-    audio_controller = AudioController(
-        './music/permute.wav',
-        audio_features=audio_features,
-        queue=audio_features_queue
-    )
-
-    # Start the audio controller thread
-    audio_thread = threading.Thread(target=audio_controller.play_and_extract_features)
-    audio_thread.start()
-
-    # Start the shader window (using run_window_config)
-    shader_thread = threading.Thread(target=lambda: mglw.run_window_config(ShaderController))
-    shader_thread.start()
-
-    # Initialize PyQt application and GUI
     app = QApplication(sys.argv)
-    gui_window = ShaderParameterPage(audio_features, shader_config)
-    gui_window.show()
 
-    # Start the GUI event loop
-    sys.exit(app.exec_())
+    config = ShaderConfig.load(PRESET, textures=TEXTURES)
+    session = VizSession(TRACK, config, mode=MODE, analysis_rate_hz=ANALYSIS_RATE_HZ)
+
+    ShaderWindow.session = session
+    session.start()
+    threading.Thread(
+        target=lambda: mglw.run_window_config(ShaderWindow), name="ShaderWindow", daemon=True
+    ).start()
+
+    gui = ShaderParameterPage(session)
+    gui.show()
+    app.aboutToQuit.connect(session.close)
+    return app.exec_()
+
+
+if __name__ == "__main__":
+    sys.exit(main())

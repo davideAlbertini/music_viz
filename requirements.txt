@@ -1,0 +1,8 @@
+librosa>=1.0
+moderngl>=5.12
+moderngl-window>=3.1
+numpy>=2.0
+Pillow>=10.0.1
+PyAudio>=0.2.14
+PyQt5>=5.15
+scipy>=1.11
